@@ -8,7 +8,7 @@
 - 🎯 交互式命令行界面选择环境
 - ⚙️ 自动设置环境变量并启动Claude
 - 🆕 支持自定义提供商配置
-- 🛠️ 可设置PowerShell别名`cc`，一键启动工具
+- 🛠️ 设置PowerShell别名`cc`，一键启动工具
 
 ## 项目结构
 ```
@@ -27,7 +27,7 @@ ClaudeCodeScripts/
 - 至少一个AI模型提供商的API密钥（**需要官方支持Anthropic api**）
 
 ### 步骤1：下载本项目到本地路径
-1. 克隆或下载本项目到本地任意路径，例如：`C:\ClaudeCodeScripts`
+1. 克隆或下载本项目到本地任意路径，例如：在`C:`运行如下命令
 ```bash
 git clone https://github.com/jingkarqi/Claude_Code_Environment_Selector.git
 ```
@@ -87,7 +87,7 @@ git clone https://github.com/jingkarqi/Claude_Code_Environment_Selector.git
    ```powershell
    # 定义cc别名，指向工具脚本
    function cc {
-       & "C:\ClaudeCodeScripts\src\Set-CCEnvironment.ps1"
+       & "C:\Claude_Code_Environment_Selector\src\Set-CCEnvironment.ps1"
    }
    ```
 3. 保存并关闭记事本，执行以下命令使配置生效：
