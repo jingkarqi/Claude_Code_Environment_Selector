@@ -28,6 +28,9 @@ ClaudeCodeScripts/
 
 ### 步骤1：下载本项目到本地路径
 1. 克隆或下载本项目到本地任意路径，例如：`C:\ClaudeCodeScripts`
+```bash
+git clone https://github.com/jingkarqi/Claude_Code_Environment_Selector.git
+```
 2. 确保`src\Set-CCEnvironment.ps1`和`providers.json`文件存在
 
 ### 步骤2：配置提供商
@@ -97,6 +100,14 @@ ClaudeCodeScripts/
 ```powershell
   cc
 ```
+
+### 效果预览
+
+#### 选择环境
+![效果预览1](doc\exp-1.png)
+
+#### 启动Claude Code
+![效果预览2](doc\exp-2.png)
 
 ## 环境变量
 脚本会自动设置以下环境变量（用于Claude Code连接自定义AI提供商）：

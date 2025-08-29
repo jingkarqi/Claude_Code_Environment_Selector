@@ -1,0 +1,28 @@
+{
+  "providers": {
+    "BigModel.cn": {
+      "base_url": "https://open.bigmodel.cn/api/anthropic",
+      "auth_token": "your bigmodel.cn api key",
+      "model": "glm-4.5",
+      "small_fast_model": "glm-4-air"
+    },
+    "DeepSeek": {
+      "base_url": "https://api.deepseek.com/anthropic",
+      "auth_token": "your deepseek api key",
+      "model": "deepseek-chat",
+      "small_fast_model": "deepseek-coder"
+    },
+    "ModelScope": {
+      "base_url": "https://api-inference.modelscope.cn",
+      "auth_token": "your modelscope api key",
+      "model": "Qwen/Qwen3-Coder-480B-A35B-Instruct",
+      "small_fast_model": "Qwen/Qwen2.5-Coder-32B-Instruct"
+    },
+    "Kimi": {
+      "base_url": "https://api.moonshot.cn/anthropic",
+      "auth_token": "your moonshot api key",
+      "model": "kimi-k2-turbo-preview",
+      "small_fast_model": "kimi-k2-turbo-preview"
+    }
+  }
+}
