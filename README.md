@@ -104,10 +104,10 @@ git clone https://github.com/jingkarqi/Claude_Code_Environment_Selector.git
 ### 效果预览
 
 #### 选择环境
-![效果预览1](doc\exp-1.png)
+![效果预览1](doc/exp-1.png)
 
 #### 启动Claude Code
-![效果预览2](doc\exp-2.png)
+![效果预览2](doc/exp-2.png)
 
 ## 环境变量
 脚本会自动设置以下环境变量（用于Claude Code连接自定义AI提供商）：
