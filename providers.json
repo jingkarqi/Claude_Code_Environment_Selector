@@ -4,25 +4,41 @@
       "base_url": "https://open.bigmodel.cn/api/anthropic",
       "auth_token": "your bigmodel.cn api key",
       "model": "glm-4.5",
-      "small_fast_model": "glm-4.5-air"
+      "small_fast_model": "glm-4.5-air",
+      "default_opus_model": "glm-4.5",
+      "default_sonnet_model": "glm-4.5",
+      "default_haiku_model": "glm-4.5-air",
+      "subagent_model": "glm-4.5-air"
     },
     "DeepSeek": {
       "base_url": "https://api.deepseek.com/anthropic",
       "auth_token": "your deepseek api key",
       "model": "deepseek-chat",
-      "small_fast_model": "deepseek-chat"
+      "small_fast_model": "deepseek-chat",
+      "default_opus_model": "deepseek-chat",
+      "default_sonnet_model": "deepseek-chat",
+      "default_haiku_model": "deepseek-chat",
+      "subagent_model": "deepseek-chat"
     },
     "ModelScope": {
       "base_url": "https://api-inference.modelscope.cn",
       "auth_token": "your modelscope api key",
       "model": "Qwen/Qwen3-Coder-480B-A35B-Instruct",
-      "small_fast_model": "Qwen/Qwen3-Coder-480B-A35B-Instruct"
+      "small_fast_model": "Qwen/Qwen3-Coder-480B-A35B-Instruct",
+      "default_opus_model": "Qwen/Qwen3-Coder-480B-A35B-Instruct",
+      "default_sonnet_model": "Qwen/Qwen3-Coder-480B-A35B-Instruct",
+      "default_haiku_model": "Qwen/Qwen3-Coder-480B-A35B-Instruct",
+      "subagent_model": "Qwen/Qwen3-Coder-480B-A35B-Instruct"
     },
     "Kimi": {
       "base_url": "https://api.moonshot.cn/anthropic",
       "auth_token": "your moonshot api key",
       "model": "kimi-k2-turbo-preview",
-      "small_fast_model": "kimi-k2-turbo-preview"
+      "small_fast_model": "kimi-k2-turbo-preview",
+      "default_opus_model": "kimi-k2-turbo-preview",
+      "default_sonnet_model": "kimi-k2-turbo-preview",
+      "default_haiku_model": "kimi-k2-turbo-preview",
+      "subagent_model": "kimi-k2-turbo-preview"
     }
   }
 }

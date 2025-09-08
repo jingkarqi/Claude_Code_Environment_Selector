@@ -27,6 +27,10 @@ try {
             AuthToken = $provider.auth_token
             Model = $provider.model
             SmallFastModel = $provider.small_fast_model
+            DefaultOpusModel = if ($provider.default_opus_model) { $provider.default_opus_model } else { $provider.small_fast_model }
+            DefaultSonnetModel = if ($provider.default_sonnet_model) { $provider.default_sonnet_model } else { $provider.model }
+            DefaultHaikuModel = if ($provider.default_haiku_model) { $provider.default_haiku_model } else { $provider.small_fast_model }
+            SubagentModel = if ($provider.subagent_model) { $provider.subagent_model } else { $provider.small_fast_model }
         }
     }
 }
@@ -96,11 +100,19 @@ $env:ANTHROPIC_BASE_URL = $selectedConfig.BaseUrl
 $env:ANTHROPIC_AUTH_TOKEN = $selectedConfig.AuthToken
 $env:ANTHROPIC_MODEL = $selectedConfig.Model
 $env:ANTHROPIC_SMALL_FAST_MODEL = $selectedConfig.SmallFastModel
+$env:ANTHROPIC_DEFAULT_OPUS_MODEL = $selectedConfig.DefaultOpusModel
+$env:ANTHROPIC_DEFAULT_SONNET_MODEL = $selectedConfig.DefaultSonnetModel
+$env:ANTHROPIC_DEFAULT_HAIKU_MODEL = $selectedConfig.DefaultHaikuModel
+$env:CLAUDE_CODE_SUBAGENT_MODEL = $selectedConfig.SubagentModel
 
 # Show confirmation
 Write-Host "`nApplied $($selectedConfig.Name) environment config" -ForegroundColor Green
 Write-Host "Base URL: $($selectedConfig.BaseUrl)"
-Write-Host "Model:    $($selectedConfig.Model)`n"
+Write-Host "Model:    $($selectedConfig.Model)"
+Write-Host "Opus Model:    $($selectedConfig.DefaultOpusModel)"
+Write-Host "Sonnet Model:  $($selectedConfig.DefaultSonnetModel)"
+Write-Host "Haiku Model:   $($selectedConfig.DefaultHaikuModel)"
+Write-Host "Subagent Model: $($selectedConfig.SubagentModel)`n"
 
 # Launch claude
 Write-Host "Starting claude..." -ForegroundColor Cyan

@@ -42,25 +42,41 @@ git clone https://github.com/jingkarqi/Claude_Code_Environment_Selector.git
       "base_url": "https://open.bigmodel.cn/api/anthropic",
       "auth_token": "your bigmodel.cn api key",
       "model": "glm-4.5",
-      "small_fast_model": "glm-4.5-air"
+      "small_fast_model": "glm-4.5-air",
+      "default_opus_model": "glm-4.5",
+      "default_sonnet_model": "glm-4.5",
+      "default_haiku_model": "glm-4.5-air",
+      "subagent_model": "glm-4.5-air"
     },
     "DeepSeek": {
       "base_url": "https://api.deepseek.com/anthropic",
       "auth_token": "your deepseek api key",
       "model": "deepseek-chat",
-      "small_fast_model": "deepseek-chat"
+      "small_fast_model": "deepseek-chat",
+      "default_opus_model": "deepseek-chat",
+      "default_sonnet_model": "deepseek-chat",
+      "default_haiku_model": "deepseek-chat",
+      "subagent_model": "deepseek-chat"
     },
     "ModelScope": {
       "base_url": "https://api-inference.modelscope.cn",
       "auth_token": "your modelscope api key",
       "model": "Qwen/Qwen3-Coder-480B-A35B-Instruct",
-      "small_fast_model": "Qwen/Qwen3-Coder-480B-A35B-Instruct"
+      "small_fast_model": "Qwen/Qwen3-Coder-480B-A35B-Instruct",
+      "default_opus_model": "Qwen/Qwen3-Coder-480B-A35B-Instruct",
+      "default_sonnet_model": "Qwen/Qwen3-Coder-480B-A35B-Instruct",
+      "default_haiku_model": "Qwen/Qwen3-Coder-480B-A35B-Instruct",
+      "subagent_model": "Qwen/Qwen3-Coder-480B-A35B-Instruct"
     },
     "Kimi": {
       "base_url": "https://api.moonshot.cn/anthropic",
       "auth_token": "your moonshot api key",
       "model": "kimi-k2-turbo-preview",
-      "small_fast_model": "kimi-k2-turbo-preview"
+      "small_fast_model": "kimi-k2-turbo-preview",
+      "default_opus_model": "kimi-k2-turbo-preview",
+      "default_sonnet_model": "kimi-k2-turbo-preview",
+      "default_haiku_model": "kimi-k2-turbo-preview",
+      "subagent_model": "kimi-k2-turbo-preview"
     }
   }
 }
@@ -70,7 +86,11 @@ git clone https://github.com/jingkarqi/Claude_Code_Environment_Selector.git
   - `base_url`：API基础URL
   - `auth_token`：认证令牌
   - `model`：主要模型名称
-  - `small_fast_model`：小型快速模型名称
+  - `small_fast_model`：小型快速模型名称（已弃用）
+  - `default_opus_model`：用于Opus模型的模型名称
+  - `default_sonnet_model`：用于Sonnet模型的模型名称
+  - `default_haiku_model`：用于Haiku模型的模型名称（替换已弃用的`small_fast_model`）
+  - `subagent_model`：用于子代理的模型名称
 
 ### 步骤3：配置别名
 设置PowerShell别名`cc`，让你能在任意PowerShell窗口快速启动：
@@ -114,7 +134,11 @@ git clone https://github.com/jingkarqi/Claude_Code_Environment_Selector.git
 - `ANTHROPIC_BASE_URL`：提供商的API基础URL
 - `ANTHROPIC_AUTH_TOKEN`：认证令牌
 - `ANTHROPIC_MODEL`：主要模型名称
-- `ANTHROPIC_SMALL_FAST_MODEL`：小型快速模型名称
+- `ANTHROPIC_SMALL_FAST_MODEL`：小型快速模型名称（已弃用）
+- `ANTHROPIC_DEFAULT_OPUS_MODEL`：用于Opus模型的模型名称
+- `ANTHROPIC_DEFAULT_SONNET_MODEL`：用于Sonnet模型的模型名称
+- `ANTHROPIC_DEFAULT_HAIKU_MODEL`：用于Haiku模型的模型名称（替换已弃用的`ANTHROPIC_SMALL_FAST_MODEL`）
+- `CLAUDE_CODE_SUBAGENT_MODEL`：用于子代理的模型名称
 
 ## 开发说明
 ### 脚本架构
