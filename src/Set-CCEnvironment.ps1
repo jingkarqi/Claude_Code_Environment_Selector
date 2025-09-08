@@ -8,6 +8,9 @@ Switch ANTHROPIC environment variables and launch claude
 $OutputEncoding = [System.Text.Encoding]::UTF8
 chcp 65001 | Out-Null  # Set console codepage to UTF-8 (suppress output)
 
+# Clear the terminal to ensure proper cursor positioning
+Clear-Host
+
 # Load provider configurations from JSON file
 $configPath = Join-Path $PSScriptRoot "..\providers.json"
 if (-not (Test-Path $configPath)) {
