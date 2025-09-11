@@ -154,6 +154,13 @@ git clone https://github.com/jingkarqi/Claude_Code_Environment_Selector.git
 - 增加日志记录功能
 - 集成其他开发工具
 
+### 计划中的改进
+1. **记住上次选择的提供商**：保存用户上次选择的提供商，并在下次启动时默认选中
+2. **配置文件验证**：添加JSON配置文件的结构验证功能，确保所有必需字段都存在且格式正确
+3. **API密钥保护**：提供API密钥加密存储选项，避免明文存储敏感信息
+
+详细改进计划请参见 [plan.md](plan.md) 文件。
+
 ## 许可证
 本项目采用 MIT 许可证 - 详见 [LICENSE](LICENSE) 文件。
 
@@ -162,4 +169,3 @@ git clone https://github.com/jingkarqi/Claude_Code_Environment_Selector.git
 
 ## 免责声明
 本工具仅用于合法开发和测试。请确保你有权使用配置的AI服务，并遵守提供商的服务条款。
-        
