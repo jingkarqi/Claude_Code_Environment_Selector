@@ -11,6 +11,9 @@ chcp 65001 | Out-Null  # Set console codepage to UTF-8 (suppress output)
 # Clear the terminal to ensure proper cursor positioning
 Clear-Host
 
+# Define path for storing last selected provider
+$lastProviderPath = Join-Path $PSScriptRoot "..\last_provider.txt"
+
 # Load provider configurations from JSON file
 $configPath = Join-Path $PSScriptRoot "..\providers.json"
 if (-not (Test-Path $configPath)) {
@@ -47,6 +50,24 @@ Write-Host "`nEnvironment Config Selector - Use up/down arrows to select, press 
 Write-Host "--------------------------------------------------------------------------------`n"
 $selectionStartY = $Host.UI.RawUI.CursorPosition.Y  # Save starting position
 $currentSelection = 0  # Initial selection index
+
+# Check if last provider file exists and try to set default selection
+if (Test-Path $lastProviderPath) {
+    try {
+        $lastProvider = Get-Content $lastProviderPath -ErrorAction Stop
+        # Find index of last provider in configs
+        for ($i = 0; $i -lt $configs.Count; $i++) {
+            if ($configs[$i].Name -eq $lastProvider) {
+                $currentSelection = $i
+                break
+            }
+        }
+    }
+    catch {
+        # If there's an error reading the file, just use default selection (0)
+    }
+}
+
 $configCount = $configs.Count  # Number of configurations
 
 # Calculate maximum name length (fixed version)
@@ -116,6 +137,13 @@ Write-Host "Opus Model:    $($selectedConfig.DefaultOpusModel)"
 Write-Host "Sonnet Model:  $($selectedConfig.DefaultSonnetModel)"
 Write-Host "Haiku Model:   $($selectedConfig.DefaultHaikuModel)"
 Write-Host "Subagent Model: $($selectedConfig.SubagentModel)`n"
+
+# Save the selected provider to file for next use
+try {
+    $selectedConfig.Name | Out-File -FilePath $lastProviderPath -Encoding UTF8 -ErrorAction Stop
+} catch {
+    Write-Host "Warning: Could not save last provider selection: $_" -ForegroundColor Yellow
+}
 
 # Launch claude
 Write-Host "Starting claude..." -ForegroundColor Cyan
